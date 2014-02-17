@@ -1,1 +1,4 @@
-Adding some text to the readme
+Welcome to Whittaker-Blocmetrics
+
+Heroku: whittaker-blocmetrics.herokuapp.com
+
