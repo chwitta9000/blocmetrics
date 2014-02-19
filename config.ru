@@ -1,2 +1,2 @@
-require './hello_world'
+require './tracker'
 run Sinatra::Application
