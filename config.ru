@@ -1,2 +1,2 @@
-require './tracker'
+require './app'
 run Sinatra::Application
