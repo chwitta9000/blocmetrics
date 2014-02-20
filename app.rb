@@ -14,6 +14,11 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
 end
 
+helpers do 
+  include Rack::Utils
+  alias_method :h, :escape_html
+end
+
 # Get all users
 get '/' do
   @users = User.order('created_at DESC')

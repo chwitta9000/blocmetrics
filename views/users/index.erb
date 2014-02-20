@@ -5,10 +5,11 @@
   <ul>
     <% @users.each do |user| %>
       <li>
-        <h4><a href="/users/<%= user.id %>"><%= user.name %></a></h4>
-        <p>Created: <%= user.created_at %></p>
+        <h4><a href="/users/<%= user.id %>"><%=h user.name %></a></h4>
+        <p>Created: <%=h user.created_at %></p>
       </li>
     <% end %>
   </ul>
   </div>
+
 </body>

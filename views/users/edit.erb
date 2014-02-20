@@ -7,19 +7,19 @@
     <input type="hidden" name="_method" value="put" />
     <label for="user_name">Name:</label>
     <br>
-    <input id="user_name" class="form-control" name="user[name]" type="text" value="<%= @user.name %>" style="width=90%"/>
+    <input id="user_name" class="form-control" name="user[name]" type="text" value="<%=h @user.name %>" style="width=90%"/>
   </div>
   
   <div class="form-group">
     <label for="user_email">Email:</label>
     <br>
-    <input id="user_email" class="form-control" name="user[email]" type="text" value="<%= @user.email %>" style="width=90%"/>
+    <input id="user_email" class="form-control" name="user[email]" type="text" value="<%=h @user.email %>" style="width=90%"/>
   </div>
 
   <div class="form-group">
     <label for="user_password">Password:</label>
     <br>
-    <input id="user_password" class="form-control" name="user[password]" type="text" value="<%= @user.password %>" style="width=90%"/>
+    <input id="user_password" class="form-control" name="user[password]" type="text" value="<%=h @user.password %>" style="width=90%"/>
   </div>
 
   <button type="submit" class="btn btn-success">Submit</button>
