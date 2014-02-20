@@ -8,6 +8,15 @@
       <li><a href="/">Home</a></li>
       <li><a href="/users/new">New User</a></li>
     </ul>
+
+    <% if flash[:notice] %>
+      <p class="alert alert-success"><%= flash[:notice] %>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="alert alert-error"><%= flash[:error] %>
+    <% end %>
+
     <%= yield %>
+    
   </body>
 </html>
