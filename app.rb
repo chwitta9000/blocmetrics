@@ -14,16 +14,17 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
 end
 
+# Get all users
 get '/' do
   @users = User.order('created_at DESC')
   erb :"users/index"
 end
 
+# Create new user
 get '/users/new' do
   @user = User.new
   erb :"users/new"
 end
-
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
@@ -33,7 +34,19 @@ post '/users' do
   end
 end
 
+# View user profile
 get '/users/:id' do
   @user = User.find(params[:id])
   erb :"users/show"
 end
+
+# Edit user profile
+get '/users/:id/edit' do
+  @user = User.find(params[:id])
+  erb :"users/edit"
+end
+put "/users/:id" do
+  @user = User.find(params[:id])
+  @user.update(params[:user])
+  redirect "/users/#{@user.id}"
+end 
