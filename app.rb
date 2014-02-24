@@ -72,3 +72,21 @@ end
 
 
 # private route that takes apart what i receive and store as events in the db
+
+get '/tracking-hit' do
+  erb :index
+  #json params
+  #javascript will send params here
+
+  #puts params
+
+  #parse stuff to use elewhere - create objects - using ruby
+    #event object
+    #what URL, save objects associated with that application
+    #search by app 
+end
+
+
+
+
+
