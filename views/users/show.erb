@@ -1,13 +1,15 @@
 <body>
-  <h4>User Profile</h4>
 
-  <div class="container">
-    <p><strong><%=h @user.name %></strong></p>
-    <p><%=h @user.email %></p>
-    <small>Created: <%= @user.created_at %></small>
+  <div class="row">
+    <h4><i>User Profile</i></h4>
+      <div class="span4">
+        <p><strong><%=h @user.name %></strong></p>
+        <p><%=h @user.email %></p>
+        <small>Created: <%= @user.created_at %></small>
+        </br>
+        <p><a href="/users/<%= @user.id %>/edit">Edit Profile</a></p>
+      </div>
+    </div>
   </div>
 
-  </br>
-
-  <div class="container"><a href="/users/<%= @user.id %>/edit">Edit Profile</a></div>
 </body>
