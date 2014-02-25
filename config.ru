@@ -13,5 +13,5 @@ run lambda { |env|
   ]
 }
 
-require './myapp'
+require './app'
 run Sinatra::Application
