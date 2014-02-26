@@ -4,6 +4,9 @@ Heroku: whittaker-blocmetrics.herokuapp.com
 
 
 
+
+wrap this in $(document) whatever and make it on click or whatever==>
+
 .ajax({
     type: "POST",
     url: "Servicename.asmx/DoSomeCalculation", 
