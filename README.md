@@ -3,7 +3,8 @@ Welcome to Whittaker-Blocmetrics
 Heroku: whittaker-blocmetrics.herokuapp.com
 
 
-ajax({
+
+.ajax({
     type: "POST",
     url: "Servicename.asmx/DoSomeCalculation", 
   data: "{param1ID:"+ param1Val+"}",
