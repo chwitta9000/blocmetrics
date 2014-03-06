@@ -5,14 +5,10 @@ require 'sinatra/activerecord'
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
 require './environments'
+require './models/user.rb'
+require './models/application.rb'
 
 enable :sessions
-
-class User < ActiveRecord::Base
-  validates :name, presence: true, length: { minimum: 2 }
-  validates :email, presence: true, length: { minimum: 5 }
-  validates :password, presence: true, length: { minimum: 6 }
-end
 
 # Helper methods
 helpers do 
@@ -60,6 +56,7 @@ end
 get '/users/show/:id' do
   protected!(params[:id])
   @user = User.find(params[:id])
+  @applications = @user.applications
   erb :"users/show"
 end
 
@@ -78,10 +75,16 @@ get '/index' do
   erb :"index"
 end
 
+get '/users/:id/applications/:id' do
+  @user = User.find(params[:user_id])
+  @application = @user.applications.find(params[:id])
+end
+
 # private route that takes apart what i receive and store as events in the db
 
 get '/tracking-hit' do
   erb :index
+
   #json params
   #javascript will send params here
 

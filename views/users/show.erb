@@ -1,15 +1,23 @@
 <body>
 
   <div class="row">
-    <h4><i>User Profile</i></h4>
-      <div class="span4">
-        <p><strong><%=h @user.name %></strong></p>
-        <p><%=h @user.email %></p>
-        <small>Created: <%= @user.created_at %></small>
-        </br>
-        <p><a href="/users/<%= @user.id %>/edit">Edit Profile</a></p>
-      </div>
+
+
+    <div class="col-md-6">
+      <h4><i>User Profile</i></h4>
+      <p><strong><%= @user.name %></strong></p>
+      <p><%=h @user.email %></p>
+      <small>Created: <%= @user.created_at %></small>
+      <p><a href="/users/<%= @user.id %>/edit">Edit Profile</a></p>
     </div>
+
+    <div class="col-md-6">
+      <h4><i>Your Applications</i></h4>
+      <% @applications.each do |app| %> 
+        <a href="/users/<%= @user.id %>/applications/<%= app.id %>"><%= app.name %></a>
+      <% end %>
+    </div>
+
   </div>
 
 </body>

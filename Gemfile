@@ -10,6 +10,7 @@ gem 'sinatra-activerecord'
 gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
 gem 'thin'
+# gem 'validate_url'
 
 group :development do
   gem 'sqlite3'
