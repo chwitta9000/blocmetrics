@@ -7,9 +7,10 @@ Heroku: whittaker-blocmetrics.herokuapp.com
 
 wrap this in $(document) whatever and make it on click or whatever==>
 
+
 .ajax({
     type: "POST",
-    url: "Servicename.asmx/DoSomeCalculation", 
+    url: "whittaker-blocmetrics.herokuapp.com/tracking-hit", 
   data: "{param1ID:"+ param1Val+"}",
     contentType: "application/json; charset=utf-8",
     dataType: "json",

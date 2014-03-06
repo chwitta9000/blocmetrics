@@ -34,6 +34,10 @@ end
 
 # Get all users
 get '/' do
+  erb :"index"
+end
+
+get '/users/index' do
   @users = User.order('created_at DESC')
   erb :"users/index"
 end
@@ -46,14 +50,14 @@ end
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
-    redirect "users/#{@user.id}", :notice => 'Your user account was created successfully!'
+    redirect "/", :notice => 'Your user account was created successfully!'
   else
-    redirect "users/new", :error => 'Something went wrong.  Please try again.'
+    redirect "/", :error => 'Something went wrong.  Please try again.'
   end
 end
 
 # View user profile
-get '/users/:id' do
+get '/users/show/:id' do
   protected!(params[:id])
   @user = User.find(params[:id])
   erb :"users/show"
@@ -70,6 +74,9 @@ put "/users/:id" do
   redirect "/users/#{@user.id}"
 end
 
+get '/index' do
+  erb :"index"
+end
 
 # private route that takes apart what i receive and store as events in the db
 
