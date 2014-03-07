@@ -7,6 +7,8 @@ require 'sinatra/redirect_with_flash'
 require './environments'
 require './models/user.rb'
 require './models/application.rb'
+require './models/event.rb'
+
 
 enable :sessions
 
@@ -83,7 +85,11 @@ end
 # private route that takes apart what i receive and store as events in the db
 
 get '/tracking-hit' do
-  erb :index
+  puts params
+  puts "whatever" 
+
+  #params[:parameter_1]
+  #params[:parameter_2]
 
   #json params
   #javascript will send params here

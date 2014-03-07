@@ -6,13 +6,40 @@ Heroku: whittaker-blocmetrics.herokuapp.com
 
 
 wrap this in $(document) whatever and make it on click or whatever==>
+--insert into application.js
+
+
+
+$(document).ready(
+  function(){
+    $(".blocmetrics").click(
+      function(event){
+        .ajax({
+            type: "POST",
+            url: "http://localhost:4567/tracking-hit",
+          data: {
+            parameter_1: "Blocmetrics is awesome!"
+            parameter_2: "Hello everyone!"
+        }    
+        });
+      });
+});
+
+
+
+
+
+
 
 
 .ajax({
     type: "POST",
     url: "whittaker-blocmetrics.herokuapp.com/tracking-hit", 
-  data: "{param1ID:"+ param1Val+"}",
-    contentType: "application/json; charset=utf-8",
+  data: {
+            parameter_1: "Blocmetrics is awesome!"
+            parameter_2: "Hello everyone!"
+          }
+<!--     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function(msg) {
       UseReturnedData(msg.d);
@@ -23,5 +50,5 @@ wrap this in $(document) whatever and make it on click or whatever==>
         ParseResult(err);
       }
       else { alert('Error:' + err.responseText + '  Status: ' + err.status); }
-    }
+    } -->
 });

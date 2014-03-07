@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306163632) do
+ActiveRecord::Schema.define(version: 20140306225738) do
 
   create_table "applications", force: true do |t|
     t.string   "name"
     t.string   "url"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "application_id"
+    t.string   "name"
+    t.string   "property_1"
+    t.string   "property_2"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
